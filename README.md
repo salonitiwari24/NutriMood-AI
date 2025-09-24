@@ -79,16 +79,5 @@ Both members collaborated on testing, UX decisions, and documentation.
 ## License
 For academic/assignment use. Replace or add a license as needed.
 
-## Project Explanation
-NutriMood-AI is a mobile-first companion that helps users understand how nutrition and habits affect mood. Users log daily notes (optionally with a meal image URL and wearable summary JSON). The backend synthesizes these inputs into a structured, coach-style JSON summary: daily overview, nutrition estimation (calories/macros), mood trend, alerts, and actionable recommendations. The frontend presents a clean dashboard, quick logging, insights, and history.
 
-Key flows:
-- User logs text/image/sensor data → API returns AI JSON summary
-- Dashboard renders the latest summary, showing highlights, mood trend, and tips
-- History provides a reverse-chronological list of previous entries
-
-Design principles:
-- Fast, responsive UI with accessible components
-- Deterministic JSON responses from AI with strict fallbacks
-- Simple deployment and easy local development
 
