@@ -78,3 +78,40 @@ Both members collaborated on testing, UX decisions, and documentation.
 
 ## License
 For academic/assignment use. Replace or add a license as needed.
+
+## Project Explanation
+NutriMood-AI is a mobile-first companion that helps users understand how nutrition and habits affect mood. Users log daily notes (optionally with a meal image URL and wearable summary JSON). The backend synthesizes these inputs into a structured, coach-style JSON summary: daily overview, nutrition estimation (calories/macros), mood trend, alerts, and actionable recommendations. The frontend presents a clean dashboard, quick logging, insights, and history.
+
+Key flows:
+- User logs text/image/sensor data → API returns AI JSON summary
+- Dashboard renders the latest summary, showing highlights, mood trend, and tips
+- History provides a reverse-chronological list of previous entries
+
+Design principles:
+- Fast, responsive UI with accessible components
+- Deterministic JSON responses from AI with strict fallbacks
+- Simple deployment and easy local development
+
+## Contribution Split (Two Members)
+
+### Member A — Frontend Lead
+- Bootstrapped Vite + React + TypeScript with Tailwind and shadcn/ui
+- Built navigation (`MobileLayout`, bottom navigation) and routed pages:
+  - `Dashboard`, `DailyLog`, `Insights`, `History`, `Profile`, `NotFound`
+- Implemented UI components integration (cards, forms, charts, toasts, tooltips)
+- State and data fetching with React Router + TanStack Query
+- Fixed TypeScript lint issues and improved developer UX (toasts, tooltips)
+- Production build and asset optimization with Vite
+
+### Member B — Backend & Integration Lead
+- Implemented FastAPI app in `server/app.py` with models and endpoints:
+  - `POST /log`, `GET /dashboard`, `GET /history`, `GET /alerts`
+- AI summarization pipeline using OpenAI (JSON-only responses) with robust fallbacks
+- Lightweight in-memory storage for entries; minimal schema guards and error handling
+- Auth-agnostic API design suitable for local demos and coursework
+- Wrote backend setup instructions and environment configuration steps
+
+### Joint Work
+- Requirements refinement, feature prioritization, and UX decisions
+- Integration testing across frontend and backend
+- Documentation: README authoring, project overview, and submission packaging
